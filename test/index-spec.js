@@ -4,10 +4,13 @@ var assert = chai.assert;
 var noteApplication = require('../index');
 
 
-describe("Test cases for not application ", function(){
-	it("Test to be sure note", function(){
+describe('Test to see a new instance is properly created', function() {
 
-		assert.equal(noteApplication("Olawale").author, "Olawale")
-	})
-})
+  it('A new instance must be an object type ', function() {
+    var myNote = new noteApplication("Olawale");
+		expect((myNote instanceof Object)).to.equal(true);
+  });
 
+
+
+});
