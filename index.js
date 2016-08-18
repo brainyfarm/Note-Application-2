@@ -67,8 +67,5 @@ var  NoteApplication = function( author ) {
 	
 	
 }; 
-
-var myNote = new NoteApplication("Olawale");
-
-myNote.create('Cool Note1');
-console.log(myNote.listNotes());
+// Export this
+module.export = NoteApplication
