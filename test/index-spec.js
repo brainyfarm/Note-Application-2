@@ -43,16 +43,6 @@ describe('Instantiation tests', function() {
 
 });
 
-/*
-describe('Object methods existence test', function(){
-
-	it('noteApplication must have a method create()', function() {
-		should.exist(noteApplication.create);
-   });
-
-})
-*/
-
 
 describe('Object methods usage test', function() {
   	it("myNote.create('New note') should make note with content \'New note\' ", function(){
@@ -77,13 +67,4 @@ describe('Make sure author us set for new instance before creation', function() 
 });
 
 
-/*
-describe('Successful note creation', function() {
-var myNote = new noteApplication("Olawale");
-	myNote.create("Awesome note!")
- 	it('Length of notes must be 1', function() {
-		expect((myNote.notes.length)).to.equal(1);
-  	});  
-});
-*/
 
