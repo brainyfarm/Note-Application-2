@@ -50,11 +50,45 @@ describe('Object methods usage test', function() {
   		assert.equal(myNote.notes[0], "This is a note");
   	})
 
-  	it("myNote.delete(0) should delete the first note", function(){
-  		myNote.create("This is a note");
-  		myNote.delete(0);
-  		expect((myNote.notes.length)).to.equal(0);
+  	it("MyNote get must return a note content", function(){
+  		myNote.notes = [];
+  		myNote.create("Cool note");
+  		var getResult = myNote.get(0);
+  		assert.equal(getResult, "Cool note");
   	})
+
+
+	it("MyNote edit method must replace content of a note", function(){
+  		myNote.notes = [];
+  		myNote.create("This is a note");
+  		myNote.edit(0, "New note content");
+  		assert.equal(myNote.notes[0], "New note content");
+  	})
+
+
+  	it("MyNote delete method should delete a note", function(){
+  		myNote.notes = [];
+  		myNote.create("This is a note");
+  		myNote.delete(0)
+  		assert.equal(myNote.notes[0], undefined);
+  	})
+
+  	it("MyNote search('No where to be found') method should return 'no result'", function(){
+  		myNote.notes = [];
+  		myNote.create("This is a note");
+  		var thisSearch = myNote.search("No where to be found")
+  		assert.equal(thisSearch, 'no result');
+  	})
+ 
+  	
+
+	it("MyNote listNotes method should return 'no notes saved' ", function(){
+  		myNote.notes = [];
+  		var result = myNote.listNotes();
+  		assert.equal(result, "no notes saved");
+  	})
+  	
+
 });
 
 
